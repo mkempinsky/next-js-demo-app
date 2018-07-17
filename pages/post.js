@@ -6,11 +6,26 @@ import Layout from '../components/Layout';
 // in this case, we use the router's 'query' object, which has the query string pararms
 // now we can get the title with rops.router.query.title
 
-const Page = withRouter(props => (
-    <Layout>
+// const Page = withRouter(props => (
+//     <Layout>
+//         <h1>{props.router.query.title}</h1>
+//         <p>This is the blog post content.</p>
+//     </Layout>
+// ));
+
+// export default Page;
+
+const Content = withRouter(props => (
+    <div>
         <h1>{props.router.query.title}</h1>
         <p>This is the blog post content.</p>
-    </Layout>
+    </div>
 ));
+
+const Page = props => (
+    <Layout>
+        <Content />
+    </Layout>
+);
 
 export default Page;
