@@ -18,6 +18,9 @@ const Header = () => {
             <Link href="/about">
                 <a style={linkStyles}>About</a>
             </Link>
+            <Link href="/form">
+                <a style={linkStyles}>Form</a>
+            </Link>
         </div>
     );
 };

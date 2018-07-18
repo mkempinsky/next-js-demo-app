@@ -1,18 +1,19 @@
 import Layout from '../components/Layout';
 import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
+import UserInput from '../components/UserInput';
 
-const PostLink = props => (
-    <li>
-        <Link as={`/p/${props.id}`} href={`/post?title=${props.title}`}>
-            <a>{props.title}</a>
-        </Link>
-    </li>
-);
+// const PostLink = props => (
+//     <li>
+//         <Link as={`/p/${props.id}`} href={`/post?title=${props.title}`}>
+//             <a>{props.title}</a>
+//         </Link>
+//     </li>
+// );
 
 const Index = props => (
     <Layout>
-        <h1>Batman TV Shows</h1>
+        <h1>Law and Order TV Shows</h1>
         <ul>
             {props.shows.map(({show}) => (
                 <li key={show.id}>
@@ -25,6 +26,30 @@ const Index = props => (
             // <PostLink id="learn-next-js" title="Learn Next.js is awesome" />
             // <PostLink id="deploy-next-js" title="Deploy apps with Zeit" /> */}
         </ul>
+        <style jsx>{`
+            h1,
+            a {
+                font-family: 'Arial';
+            }
+
+            ul {
+                padding: 0;
+            }
+
+            li {
+                list-style: none;
+                margin: 5px 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: lightBlue;
+            }
+
+            a:hover {
+                opacity: 0.6;
+            }
+        `}</style>
     </Layout>
 );
 
